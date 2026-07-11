@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sales Details</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <h1 class="brand-title" data-i18n="title">Sales Details</h1>
+      <p class="brand-sub" data-i18n="subtitle">Deep dive</p>
+    </div>
+
+    <nav class="top-controls" aria-label="Global controls">
+      <select id="langTop2" aria-label="Select language" class="lang-top">
+        <option value="en">EN-US</option>
+        <option value="pt">PT-BR</option>
+        <option value="es">ES</option>
+      </select>
+
+      <button id="themeToggleTop2" class="icon-btn" aria-pressed="false" aria-label="Toggle theme">
+        <svg id="icon-sun-top2" class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>
+        <svg id="icon-moon-top2" class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="container" role="main">
+    <aside class="side-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="nav-btn" data-i18n="nav.home">Financial Report</a></li>
+        <li><a href="sale_report.html" class="nav-btn" data-i18n="nav.sales">Sales Report</a></li>
+        <li><a href="sale_details.html" class="nav-btn active" data-i18n="nav.details">Sales Details</a></li>
+      </ul>
+    </aside>
+
+    <section class="content" aria-labelledby="details-title">
+      <h2 id="details-title" class="page-title" data-i18n="details.title">Sales Details</h2>
+
+      <div class="filters" role="region" aria-label="Filters">
+        <div class="segmentation">
+          <button class="seg-btn active" data-seg="all">All</button>
+          <button class="seg-btn" data-seg="2013">2013</button>
+          <button class="seg-btn" data-seg="2014">2014</button>
+        </div>
+      </div>
+
+      <div class="visual-grid">
+        <div class="chart card" role="img" aria-label="Semester sales">
+          <h3 class="chart-title" data-i18n="charts.semester">Sales by Semester</h3>
+          <svg viewBox="0 0 400 140" class="chart-svg" aria-hidden="true">
+            <rect x="20" y="20" width="80" height="80" fill="var(--accent)"></rect>
+            <rect x="120" y="40" width="80" height="60" fill="var(--accent-2)"></rect>
+            <rect x="220" y="10" width="80" height="90" fill="var(--accent-3)"></rect>
+          </svg>
+        </div>
+
+        <div class="chart card" role="img" aria-label="Histogram units sold">
+          <h3 class="chart-title" data-i18n="charts.histogram">Histogram Units Sold</h3>
+          <div class="histogram" aria-hidden="true">
+            <div style="height:40%" class="hist-bar"></div>
+            <div style="height:60%" class="hist-bar"></div>
+            <div style="height:30%" class="hist-bar"></div>
+            <div style="height:80%" class="hist-bar"></div>
+          </div>
+        </div>
+
+        <div class="chart card" role="img" aria-label="Units sold by product">
+          <h3 class="chart-title" data-i18n="charts.byProduct">Units Sold x Product</h3>
+          <ul class="product-list" aria-hidden="true">
+            <li><span>Paseo</span><span class="pill">0.12 Mi</span></li>
+            <li><span>VTT</span><span class="pill">0.22 Mi</span></li>
+            <li><span>Velo</span><span class="pill">0.18 Mi</span></li>
+            <li><span>Amarella</span><span class="pill">0.16 Mi</span></li>
+          </ul>
+        </div>
+
+        <div class="table card" role="table" aria-label="Quarterly sales table">
+          <h3 class="chart-title" data-i18n="charts.table">Quarterly Sales</h3>
+          <table>
+            <thead>
+              <tr><th>Quarter</th><th>2013</th><th>2014</th><th>Total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Q1</td><td>2,632,442.94</td><td>2,612,442.94</td><td>5,244,885.88</td></tr>
+              <tr><td>Q2</td><td>3,232,378.45</td><td>3,232,378.45</td><td>6,464,756.90</td></tr>
+              <tr><td>Q3</td><td>783,600.03</td><td>2,738,064.34</td><td>3,521,664.37</td></tr>
+              <tr><td>Q4</td><td>3,114,861.48</td><td>4,712,352.02</td><td>7,827,213.50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html" class="mini-nav">Home</a>
+      <a href="sale_report.html" class="mini-nav">Sales</a>
+      <a href="sale_details.html" class="mini-nav">Details</a>
+    </nav>
+    <p class="copyright">© <span id="year3"></span> dio.me</p>
+  </footer>
+
+  <script src="./src/script.js"></script>
+</body>
+</html>

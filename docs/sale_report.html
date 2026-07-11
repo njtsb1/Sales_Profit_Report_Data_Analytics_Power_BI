@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sales Report</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <h1 class="brand-title" data-i18n="title">Sales Report</h1>
+      <p class="brand-sub" data-i18n="subtitle">Interactive overview</p>
+    </div>
+
+    <nav class="top-controls" aria-label="Global controls">
+      <select id="langTop" aria-label="Select language" class="lang-top">
+        <option value="en">EN-US</option>
+        <option value="pt">PT-BR</option>
+        <option value="es">ES</option>
+      </select>
+
+      <button id="themeToggleTop" class="icon-btn" aria-pressed="false" aria-label="Toggle theme">
+        <svg id="icon-sun-top" class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>
+        <svg id="icon-moon-top" class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="container" role="main">
+    <aside class="side-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="nav-btn" data-i18n="nav.home">Financial Report</a></li>
+        <li><a href="sale_report.html" class="nav-btn active" data-i18n="nav.sales">Sales Report</a></li>
+        <li><a href="sale_details.html" class="nav-btn" data-i18n="nav.details">Sales Details</a></li>
+      </ul>
+    </aside>
+
+    <section class="content" aria-labelledby="sales-title">
+      <h2 id="sales-title" class="page-title" data-i18n="sales.title">Sales Over Time</h2>
+
+      <div class="filters" role="region" aria-label="Filters">
+        <label for="range" class="visually-hidden">Date range</label>
+        <input id="range" type="text" placeholder="09/01/2013 - 12/01/2014" aria-label="Date range" />
+        <div class="segmentation">
+          <button class="seg-btn active" data-seg="all">All</button>
+          <button class="seg-btn" data-seg="government">Government</button>
+          <button class="seg-btn" data-seg="enterprise">Enterprise</button>
+          <button class="seg-btn" data-seg="small">Small Business</button>
+        </div>
+      </div>
+
+      <div class="visual-grid">
+        <div class="chart card" role="img" aria-label="Line chart sales over time">
+          <h3 class="chart-title" data-i18n="charts.salesTime">Sales Over Time</h3>
+          <svg viewBox="0 0 600 200" class="chart-svg" aria-hidden="true">
+            <polyline fill="none" stroke="var(--accent)" stroke-width="3" points="0,160 60,140 120,120 180,100 240,80 300,60 360,40 420,60 480,30 540,20 600,40"></polyline>
+          </svg>
+        </div>
+
+        <div class="chart card" role="img" aria-label="Bar chart sales by segment">
+          <h3 class="chart-title" data-i18n="charts.bySegment">Sales by Segment</h3>
+          <div class="bars">
+            <div class="bar" style="--w:50%" aria-hidden="true"><span>Government</span></div>
+            <div class="bar" style="--w:30%" aria-hidden="true"><span>Enterprise</span></div>
+            <div class="bar" style="--w:10%" aria-hidden="true"><span>Small Business</span></div>
+            <div class="bar" style="--w:8%" aria-hidden="true"><span>Midmarket</span></div>
+            <div class="bar" style="--w:2%" aria-hidden="true"><span>Channel</span></div>
+          </div>
+        </div>
+
+        <div class="chart card" role="img" aria-label="Treemap sales by country">
+          <h3 class="chart-title" data-i18n="charts.byCountry">Sales by Country</h3>
+          <div class="treemap" aria-hidden="true">
+            <div class="tile" style="--size:40%">USA</div>
+            <div class="tile" style="--size:25%">France</div>
+            <div class="tile" style="--size:20%">Germany</div>
+            <div class="tile" style="--size:10%">Canada</div>
+            <div class="tile" style="--size:5%">Mexico</div>
+          </div>
+        </div>
+
+        <div class="table card" role="table" aria-label="Quarterly sales table">
+          <h3 class="chart-title" data-i18n="charts.table">Quarterly Sales</h3>
+          <table>
+            <thead>
+              <tr><th data-i18n="table.quarter">Quarter</th><th data-i18n="table.2013">2013</th><th data-i18n="table.2014">2014</th><th data-i18n="table.total">Total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Q1</td><td>2,632,442.94</td><td>2,612,442.94</td><td>5,244,885.88</td></tr>
+              <tr><td>Q2</td><td>3,232,378.45</td><td>3,232,378.45</td><td>6,464,756.90</td></tr>
+              <tr><td>Q3</td><td>783,600.03</td><td>2,738,064.34</td><td>3,521,664.37</td></tr>
+              <tr><td>Q4</td><td>3,114,861.48</td><td>4,712,352.02</td><td>7,827,213.50</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td data-i18n="table.total">Total</td><td>3,878,464.51</td><td>13,015,237.75</td><td>16,893,702.26</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html" class="mini-nav">Home</a>
+      <a href="sale_report.html" class="mini-nav">Sales</a>
+      <a href="sale_details.html" class="mini-nav">Details</a>
+    </nav>
+    <p class="copyright">© <span id="year2"></span> dio.me</p>
+  </footer>
+
+  <script src="./src/script.js"></script>
+</body>
+</html>
